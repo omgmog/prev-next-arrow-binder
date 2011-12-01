@@ -12,16 +12,14 @@ function main(){
     jQuery(document).ready(function() {
         // Code that uses jQuery's $ can follow here.
         jQuery(document).keydown(function(e){
+            var url =""
             if(e.keyCode == 37) { 
-                console.log('left');
-                //console.log($('a[rel="prev"]').length);
-                window.location = jQuery('a[rel="prev"]').attr('href');
+                url = jQuery('a[rel="prev"],a[title="Previous"],a[title="Prev"],a[title="prev"],a[title="previous"],a[class="navi-prev"]').attr('href');
             }
             if(e.keyCode == 39) {
-                console.log('right');
-                //console.log($('a[rel="next"]').length);
-                window.location = jQuery('a[rel="next"]').attr('href');
+                url = jQuery('a[rel="next"],a[title="Next"],a[title="next"],a[class="navi-next"]').attr('href');
             }
+            if(url && url!="" && url!=undefined) window.location = url;
         });
 });
 };
